@@ -75,7 +75,6 @@ Boilerplate for React Redux Application
     │   │       └── PageNotFound.js
     │   ├── helpers
     │   │   ├── constants.js
-    │   │   ├── history.js
     │   │   └── utils.helper.js
     │   ├── redux
     │   │   ├── actions

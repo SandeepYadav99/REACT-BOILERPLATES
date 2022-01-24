@@ -1,6 +1,5 @@
-import axios from "axios";
-import config from "../../config";
-import history from "../helpers/history";
+import axios from 'axios';
+import config from '../../config';
 
 axios.defaults.baseURL = config.api.URL;
 
@@ -28,32 +27,32 @@ const request = (method, url, options = { params: {}, payload: {} }) => {
 };
 
 export const POST = (path, payload) => {
-  return request("POST", path, { payload });
+  return request('POST', path, { payload });
 };
 
 export const GET = (path, params) => {
-  return request("GET", path, { params });
+  return request('GET', path, { params });
 };
 
 export const GETALL = (path, filters) => {
-  return request("GET", path, { params: filters });
+  return request('GET', path, { params: filters });
 };
 
 export const PUT = (path, payload) => {
-  return request("PUT", path, { payload: payload });
+  return request('PUT', path, { payload: payload });
 };
 
 export const PATCH = (path, payload) => {
-  return request("PATCH", path, { payload: payload });
+  return request('PATCH', path, { payload: payload });
 };
 
 export const DELETE = (path) => {
-  return request("DELETE", path);
+  return request('DELETE', path);
 };
 
 axios.interceptors.request.use((request) => {
   // Setting up headers
-  const token = localStorage.getItem("tokenName");
+  const token = localStorage.getItem('tokenName');
   let headers = {};
   if (token) {
     headers.authorization = `Bearer ${token}`;
@@ -73,9 +72,9 @@ axios.interceptors.response.use(
   },
   (error) => {
     if (error.code === 401) {
-      localStorage.removeItem("tokenName");
-      history.replace("/");
+      localStorage.removeItem('tokenName');
+      window.location.replace = '/';
     }
     return Promise.reject(error.response.data);
-  }
+  },
 );

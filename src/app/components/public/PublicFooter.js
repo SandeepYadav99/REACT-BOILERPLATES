@@ -1,6 +1,5 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
 const PublicFooter = () => {
   return <footer></footer>;
 };
-export default withRouter(PublicFooter);
+export default PublicFooter;

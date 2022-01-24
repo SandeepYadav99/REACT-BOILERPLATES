@@ -1,5 +1,4 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
 const PublicHeader = (props) => {
   return (
     <>
@@ -7,4 +6,4 @@ const PublicHeader = (props) => {
     </>
   );
 };
-export default withRouter(PublicHeader);
+export default PublicHeader;

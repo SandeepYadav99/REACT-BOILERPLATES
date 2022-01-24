@@ -1,35 +1,34 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import { IntlProvider } from "react-intl";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals';
+import { IntlProvider } from 'react-intl';
 
-import { Provider } from "react-redux";
-import { Router } from "react-router-dom";
-/* HELPERS */
-import history from "./app/helpers/history";
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 /* COMPONENTS */
-import App from "./App";
-import ScrollToTop from "./app/components/public/ScrollToTop";
+import App from './App';
+import ScrollToTop from './app/components/public/ScrollToTop';
+
 /* VENDOR */
-import "./vendor";
+import './vendor';
 
 // React-Redux store
-import store from "./app/redux/store";
-import en from "./locales/en";
+import store from './app/redux/store';
+import en from './locales/en';
 
 const root = (
   <Provider store={store}>
     <IntlProvider messages={en} locale="en" defaultLocale="en">
-      <Router history={history}>
+      <BrowserRouter>
         <ScrollToTop>
           <App />
         </ScrollToTop>
-      </Router>
+      </BrowserRouter>
     </IntlProvider>
   </Provider>
 );
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(root, rootElement);
 
 // If you want to start measuring performance in your app, pass a function

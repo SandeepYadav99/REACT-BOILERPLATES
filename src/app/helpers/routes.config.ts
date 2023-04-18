@@ -7,3 +7,7 @@ export const AUTH_ROUTES = {
   ME: '/auth/me',
   SET_PASSWORD: '/auth/resetPassword',
 };
+
+export const FILE_UPLOAD = {
+  URL: '/file-upload',
+};

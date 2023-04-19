@@ -1,5 +1,6 @@
 import axios, { Method, RawAxiosRequestConfig } from 'axios';
 import jwt_decode from 'jwt-decode';
+import { toast } from 'react-toastify';
 import environment from '../../environment';
 import { LOCAL_STORAGE_KEYS } from '../helpers/constants';
 import { convertJsonToFormData, removeTokenAfterLogout } from '../helpers/utils';
@@ -71,6 +72,7 @@ Axios.interceptors.response.use(
   function (error) {
     console.log(error?.response?.data?.message || 'Something went wrong');
     // Do something with response error
+    toast.error(error?.response?.data?.message || 'Something went wrong');
     // store.dispatch(showSnackBar({ show: true, type: 'error', message: error?.response?.data?.message || 'Something went wrong' }));
     return Promise.reject(error);
   },

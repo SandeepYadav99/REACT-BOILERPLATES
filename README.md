@@ -8,7 +8,7 @@
 
 ## Key features
 
-- React
+- React`
 - Routing Version 6
 
 ## Recommended Tools
